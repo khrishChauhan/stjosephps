@@ -91,15 +91,15 @@
       100% { transform: translateX(-50%); }
     }
 
-    /* ── Nav active link ── */
-    .nav-link { position: relative; transition: color .2s; }
+    /* ── Nav links ── */
+    .nav-link { position: relative; font-size: 14px; font-weight: 500; color: #475569; transition: color .2s ease; display: inline-flex; align-items: center; padding: 4px 0; }
     .nav-link::after {
-      content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px;
+      content: ''; position: absolute; bottom: -8px; left: 0; width: 0; height: 2px;
       background: #DC2626; border-radius: 99px; transition: width .25s ease;
     }
     .nav-link:hover { color: #DC2626; }
     .nav-link:hover::after, .nav-link.active::after { width: 100%; }
-    .nav-link.active { color: #DC2626; }
+    .nav-link.active { color: #DC2626; font-weight: 600; }
 
     /* ── Pill buttons ── */
     .pill { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 99px; font-size: 11px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; transition: all .2s ease; white-space: nowrap; cursor: pointer; }
@@ -163,46 +163,54 @@
 <body class="min-h-screen">
 
 <!-- ═══════════════════════════════════════════════════════════════
-     SECTION 1 — TOP UTILITY BAR
+     SECTION 1 — SLIM ANNOUNCEMENT BAR (TOP UTILITY STRIP)
 ═══════════════════════════════════════════════════════════════ -->
-<div id="utility-bar" class="bg-navy-800 text-slate-300 text-xs sticky top-0 z-50">
-  <div class="max-w-screen-2xl mx-auto px-4 flex items-center justify-between h-9 gap-4">
+<div id="utility-bar" class="bg-navy-900 border-b border-navy-800 text-slate-300 text-xs">
+  <div class="max-w-screen-xl mx-auto px-4 md:px-6 flex items-center justify-between h-9 gap-4">
 
-    <!-- Scrolling ticker -->
-    <div class="flex items-center gap-2 flex-1 min-w-0">
-      <span class="flex-shrink-0 bg-crimson-600 text-white px-2 py-0.5 rounded text-[10px] font-bold tracking-widest uppercase">NOTICE</span>
-      <div class="marquee-wrapper flex-1">
-        <div class="marquee-track">
-          <span class="pr-24">📢 Admissions Open — Visit school office between 09:00am to 04:00pm. Helplines: 8404900550, 8405850605</span>
-          <span class="pr-24">📢 Admissions Open — Visit school office between 09:00am to 04:00pm. Helplines: 8404900550, 8405850605</span>
+    <!-- Left side: Badge with live ping indicator + scrolling notice -->
+    <div class="flex items-center gap-3 flex-1 min-w-0">
+      <div class="flex-shrink-0 inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase bg-crimson-950/80 text-crimson-400 border border-crimson-600/40">
+        <span class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-crimson-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-crimson-500"></span>
+        </span>
+        <span>Admissions 2026-27</span>
+      </div>
+      <div class="marquee-wrapper flex-1 overflow-hidden">
+        <div class="marquee-track text-slate-300 font-medium text-xs">
+          <span class="pr-16">Admissions open for Pre-Nursery to Class XII · Office hours: 09:00 AM – 04:00 PM</span>
+          <span class="pr-16">Admissions open for Pre-Nursery to Class XII · Office hours: 09:00 AM – 04:00 PM</span>
         </div>
       </div>
     </div>
 
-    <!-- Quick contacts (desktop) -->
-    <div class="desktop-only flex items-center gap-5 flex-shrink-0">
-      <a href="tel:06243247153" class="flex items-center gap-1.5 hover:text-white transition-colors">
-        <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
-        06243-247153
+    <!-- Right side: Crisp unclipped contact links (desktop) -->
+    <div class="desktop-only flex items-center gap-4 flex-shrink-0 text-slate-300">
+      <a href="tel:+918404900550" class="inline-flex items-center gap-1.5 text-xs text-slate-300 hover:text-white transition-colors">
+        <svg class="w-3.5 h-3.5 text-crimson-400 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+        <span class="font-medium tracking-tight">+91 8404900550</span>
       </a>
-      <a href="mailto:st.josephpublicschoolbegusarai@gmail.com" class="flex items-center gap-1.5 hover:text-white transition-colors">
-        <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-        st.josephpublicschoolbegusarai@gmail.com
+      <span class="w-px h-3 bg-slate-700"></span>
+      <a href="mailto:st.josephpublicschoolbegusarai@gmail.com" class="inline-flex items-center gap-1.5 text-xs text-slate-300 hover:text-white transition-colors">
+        <svg class="w-3.5 h-3.5 text-crimson-400 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        <span class="font-medium tracking-tight">st.josephpublicschoolbegusarai@gmail.com</span>
       </a>
     </div>
+
   </div>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════════════
-     SECTION 2 — MAIN BRAND HEADER
+     SECTION 2 — MAIN EXECUTIVE BRAND HEADER
 ═══════════════════════════════════════════════════════════════ -->
-<header class="bg-white border-b border-navy-200 sticky top-9 z-40">
-  <div class="max-w-screen-xl mx-auto px-6 py-4 flex items-center gap-6">
+<header class="bg-white border-b border-slate-100">
+  <div class="max-w-screen-xl mx-auto px-6 py-4 flex items-center justify-between gap-6">
 
-    <!-- Logo / Crest -->
-    <div class="flex-shrink-0">
-      <div class="w-20 h-20 rounded-full relative overflow-hidden shadow-lg ring-2 ring-crimson-600/30">
-        <!-- SVG Crest emblem -->
+    <!-- Left: Brand Identity Unit -->
+    <a href="#home" class="flex items-center gap-4 group text-left">
+      <!-- High-res Crest emblem -->
+      <div class="w-14 h-14 md:w-16 md:h-16 rounded-full relative overflow-hidden shadow-sm ring-1 ring-slate-200/80 group-hover:ring-crimson-500/40 transition-all flex-shrink-0">
         <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
           <defs>
             <radialGradient id="crestBg" cx="50%" cy="40%" r="60%">
@@ -216,91 +224,97 @@
             </linearGradient>
           </defs>
           <circle cx="60" cy="60" r="60" fill="url(#crestBg)"/>
-          <!-- Shield outline -->
           <path d="M60 12 L88 22 L88 58 C88 76 60 92 60 92 C60 92 32 76 32 58 L32 22 Z" fill="#DC2626" stroke="url(#goldGrad)" stroke-width="2"/>
-          <!-- Book -->
-          <rect x="45" y="46" width="30" height="22" rx="2" fill="#fff" opacity=".15"/>
+          <rect x="45" y="46" width="30" height="22" rx="2" fill="#fff" opacity=".18"/>
           <line x1="60" y1="46" x2="60" y2="68" stroke="url(#goldGrad)" stroke-width="1.5"/>
-          <!-- Stars / laurel simplified -->
           <circle cx="44" cy="34" r="3" fill="url(#goldGrad)"/>
           <circle cx="60" cy="30" r="3" fill="url(#goldGrad)"/>
           <circle cx="76" cy="34" r="3" fill="url(#goldGrad)"/>
-          <!-- SJPS text -->
-          <text x="60" y="84" text-anchor="middle" fill="url(#goldGrad)" font-size="7" font-family="Plus Jakarta Sans, sans-serif" font-weight="700" letter-spacing="2">SJPS</text>
-          <!-- Outer ring text -->
+          <text x="60" y="84" text-anchor="middle" fill="url(#goldGrad)" font-size="7.5" font-family="Plus Jakarta Sans, sans-serif" font-weight="800" letter-spacing="2">SJPS</text>
           <circle cx="60" cy="60" r="55" fill="none" stroke="url(#goldGrad)" stroke-width=".8" stroke-dasharray="2,3"/>
         </svg>
       </div>
-    </div>
 
-    <!-- School Name & credentials (center) -->
-    <div class="flex-1 text-center">
-      <h1 class="font-headline text-3xl md:text-4xl font-extrabold tracking-tight text-navy-900 leading-none">
-        St. Joseph Public School
-      </h1>
-      <p class="mt-1.5 text-slate-500 text-sm font-medium">
-        Affiliated to C.B.S.E., New Delhi, Upto +2 Level&nbsp;&nbsp;·&nbsp;&nbsp;Affiliation No: 330225
-      </p>
-      <p class="mt-1 text-crimson-600 text-[11px] font-bold uppercase tracking-widest">
-        Managed by Kali Charan Singh Memorial Educational Trust
-      </p>
-    </div>
-
-    <!-- Contact block (desktop) -->
-    <div class="desktop-only flex-shrink-0 text-right space-y-1.5">
-      <a href="tel:06243247153" class="flex items-center justify-end gap-2 text-navy-900 text-sm font-medium hover:text-crimson-600 transition-colors">
-        <span>06243-247153</span>
-        <span class="w-8 h-8 bg-crimson-50 rounded-full flex items-center justify-center text-crimson-600">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
-        </span>
-      </a>
-      <a href="mailto:st.josephpublicschoolbegusarai@gmail.com" class="flex items-center justify-end gap-2 text-navy-900 text-xs font-medium hover:text-crimson-600 transition-colors">
-        <span class="truncate max-w-[220px]">st.josephpublicschoolbegusarai@gmail.com</span>
-        <span class="w-8 h-8 bg-crimson-50 rounded-full flex items-center justify-center text-crimson-600 flex-shrink-0">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-        </span>
-      </a>
-      <div class="flex items-center justify-end gap-1.5 pt-0.5">
-        <span class="text-[10px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200 px-2 py-0.5 rounded-full uppercase tracking-wide">CBSE</span>
-        <span class="text-[10px] font-semibold bg-blue-50 text-blue-700 border border-blue-200 px-2 py-0.5 rounded-full uppercase tracking-wide">Aff. 330225</span>
+      <!-- Typography Stack -->
+      <div class="flex flex-col justify-center">
+        <h1 class="font-headline text-2xl md:text-[28px] font-extrabold tracking-tight text-navy-900 leading-tight">
+          St. Joseph Public School
+        </h1>
+        <p class="text-slate-500 text-[11px] md:text-xs font-normal mt-0.5 leading-snug line-clamp-1">
+          Affiliated to C.B.S.E., New Delhi (Affiliation No: 330225) · Managed by Kali Charan Singh Memorial Educational Trust
+        </p>
       </div>
+    </a>
+
+    <!-- Right: Quick Trust Badges & Direct Action -->
+    <div class="flex items-center gap-3 flex-shrink-0">
+      <div class="desktop-only flex items-center gap-2">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-slate-50 text-slate-600 border border-slate-200">
+          <svg class="w-3.5 h-3.5 text-crimson-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+          CBSE Affiliated
+        </span>
+        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-slate-50 text-slate-600 border border-slate-200">
+          Est. 2002
+        </span>
+      </div>
+      <a href="#admission" class="inline-flex items-center gap-2 bg-crimson-600 hover:bg-crimson-700 text-white font-semibold text-xs md:text-sm px-4 md:px-5 py-2.5 rounded-xl shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all">
+        <span>Online Admission</span>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+      </a>
     </div>
 
   </div>
 </header>
 
 <!-- ═══════════════════════════════════════════════════════════════
-     SECTION 3 — STICKY NAVIGATION BAR
+     SECTION 3 — STREAMLINED STICKY NAVIGATION BAR
 ═══════════════════════════════════════════════════════════════ -->
-<nav id="main-nav" class="bg-white/95 backdrop-blur-md border-b border-navy-200 sticky top-[calc(2.25rem+6rem)] z-30 shadow-sm">
+<nav id="main-nav" class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm transition-all duration-200">
   <div class="max-w-screen-xl mx-auto px-6">
-    <div class="flex items-center justify-between h-14 gap-4">
+    <div class="flex items-center justify-between h-13 py-2.5 gap-6">
 
-      <!-- Nav links (desktop) -->
+      <!-- Left / Center: Primary Nav Links -->
       <div class="desktop-only flex items-center gap-7">
-        <a href="#home"       class="nav-link active   text-sm font-semibold text-crimson-600">Home</a>
-        <a href="#about"      class="nav-link          text-sm font-semibold text-navy-700 hover:text-crimson-600">About</a>
-        <a href="#admission"  class="nav-link          text-sm font-semibold text-navy-700 hover:text-crimson-600">Admission</a>
-        <a href="#guidelines" class="nav-link          text-sm font-semibold text-navy-700 hover:text-crimson-600">Guidelines</a>
-        <a href="#gallery"    class="nav-link          text-sm font-semibold text-navy-700 hover:text-crimson-600">Gallery</a>
-        <a href="#contact"    class="nav-link          text-sm font-semibold text-navy-700 hover:text-crimson-600">Contact</a>
+        <a href="#home"       class="nav-link active">Home</a>
+        <a href="#about"      class="nav-link">About Us</a>
+        <a href="#admission"  class="nav-link">Admissions</a>
+        <a href="#guidelines" class="nav-link">Guidelines</a>
+        <a href="#gallery"    class="nav-link">Gallery</a>
+        <a href="#contact"    class="nav-link">Contact</a>
       </div>
 
-      <!-- Action pills (desktop) -->
-      <div class="desktop-only flex items-center gap-2 flex-wrap">
-        <a href="#toppers"    class="pill pill-crimson">🏆 Our Toppers</a>
-        <a href="#econtent"   class="pill pill-navy">📚 E-Content</a>
-        <a href="#downloads"  class="pill pill-slate">⬇ Downloads</a>
-        <a href="#disclosure" class="pill pill-amber">📋 Mandatory Disclosure</a>
+      <!-- Right: Action Tabs & Quick Portals (Grouped Segmented Pill Container) -->
+      <div class="desktop-only flex items-center">
+        <div class="border border-slate-200/90 rounded-xl p-1 flex items-center gap-1 bg-slate-50/70 shadow-xs">
+          <a href="#toppers" class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-600 hover:text-crimson-600 px-3 py-1.5 rounded-lg hover:bg-white hover:shadow-xs transition-all">
+            <svg class="w-3.5 h-3.5 text-amber-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            Our Toppers
+          </a>
+          <span class="w-px h-3.5 bg-slate-200"></span>
+          <a href="#econtent" class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-600 hover:text-crimson-600 px-3 py-1.5 rounded-lg hover:bg-white hover:shadow-xs transition-all">
+            <svg class="w-3.5 h-3.5 text-navy-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+            E-Content
+          </a>
+          <span class="w-px h-3.5 bg-slate-200"></span>
+          <a href="#downloads" class="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-600 hover:text-crimson-600 px-3 py-1.5 rounded-lg hover:bg-white hover:shadow-xs transition-all">
+            <svg class="w-3.5 h-3.5 text-slate-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+            Downloads
+          </a>
+          <span class="w-px h-3.5 bg-slate-200"></span>
+          <a href="#disclosure" class="inline-flex items-center gap-1.5 text-xs font-semibold text-amber-700 hover:text-crimson-600 px-3 py-1.5 rounded-lg hover:bg-white hover:shadow-xs transition-all">
+            <svg class="w-3.5 h-3.5 text-amber-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            Mandatory Disclosure
+          </a>
+        </div>
       </div>
 
-      <!-- Mobile: school name + hamburger -->
+      <!-- Mobile bar -->
       <div class="mobile-only flex items-center justify-between w-full">
-        <span class="font-headline text-base font-bold text-navy-900">SJPS</span>
-        <button id="menu-btn" class="w-10 h-10 flex flex-col items-center justify-center gap-1.5 rounded-xl hover:bg-navy-100 transition-colors" aria-label="Open menu">
-          <span class="hamburger-line w-6 h-0.5 bg-navy-800 rounded transition-all duration-300"></span>
-          <span class="hamburger-line w-6 h-0.5 bg-navy-800 rounded transition-all duration-300"></span>
-          <span class="hamburger-line w-6 h-0.5 bg-navy-800 rounded transition-all duration-300"></span>
+        <span class="font-headline text-base font-bold text-navy-900 tracking-tight">Navigation</span>
+        <button id="menu-btn" class="w-10 h-10 flex flex-col items-center justify-center gap-1.5 rounded-xl hover:bg-slate-100 transition-colors" aria-label="Open menu">
+          <span class="w-5 h-0.5 bg-navy-900 rounded transition-all"></span>
+          <span class="w-5 h-0.5 bg-navy-900 rounded transition-all"></span>
+          <span class="w-5 h-0.5 bg-navy-900 rounded transition-all"></span>
         </button>
       </div>
 
@@ -308,34 +322,58 @@
   </div>
 </nav>
 
-<!-- Mobile drawer -->
+<!-- Mobile Drawer -->
 <div id="mobile-drawer" class="mobile-drawer fixed inset-0 z-50 pointer-events-none">
-  <div id="drawer-overlay" class="absolute inset-0 bg-navy-900/60 backdrop-blur-sm opacity-0 transition-opacity duration-300"></div>
-  <div id="drawer-panel" class="absolute top-0 right-0 h-full w-72 bg-white shadow-2xl translate-x-full transition-transform duration-300 flex flex-col">
-    <div class="flex items-center justify-between p-5 border-b border-navy-200">
-      <span class="font-headline text-lg font-bold text-navy-900">Menu</span>
-      <button id="close-btn" class="w-9 h-9 flex items-center justify-center rounded-lg hover:bg-navy-100 transition-colors">
-        <svg class="w-5 h-5 text-navy-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+  <div id="drawer-overlay" class="absolute inset-0 bg-navy-950/60 backdrop-blur-sm opacity-0 transition-opacity duration-300"></div>
+  <div id="drawer-panel" class="absolute top-0 right-0 h-full w-80 max-w-[85vw] bg-white shadow-2xl translate-x-full transition-transform duration-300 flex flex-col">
+    <div class="flex items-center justify-between p-5 border-b border-slate-100">
+      <div class="flex items-center gap-2.5">
+        <div class="w-8 h-8 rounded-full bg-crimson-600 flex items-center justify-center text-white font-bold text-xs">SJ</div>
+        <span class="font-headline text-base font-bold text-navy-900">St. Joseph PS</span>
+      </div>
+      <button id="close-btn" class="w-9 h-9 flex items-center justify-center rounded-lg hover:bg-slate-100 transition-colors" aria-label="Close menu">
+        <svg class="w-5 h-5 text-slate-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
       </button>
     </div>
     <nav class="flex-1 overflow-y-auto p-5 space-y-1">
-      <a href="#home"       class="flex items-center gap-3 px-4 py-3 rounded-xl text-crimson-600 font-semibold bg-crimson-50">Home</a>
-      <a href="#about"      class="flex items-center gap-3 px-4 py-3 rounded-xl text-navy-800 font-medium hover:bg-navy-50">About</a>
-      <a href="#admission"  class="flex items-center gap-3 px-4 py-3 rounded-xl text-navy-800 font-medium hover:bg-navy-50">Admission</a>
-      <a href="#guidelines" class="flex items-center gap-3 px-4 py-3 rounded-xl text-navy-800 font-medium hover:bg-navy-50">Guidelines</a>
-      <a href="#gallery"    class="flex items-center gap-3 px-4 py-3 rounded-xl text-navy-800 font-medium hover:bg-navy-50">Gallery</a>
-      <a href="#contact"    class="flex items-center gap-3 px-4 py-3 rounded-xl text-navy-800 font-medium hover:bg-navy-50">Contact</a>
-      <hr class="border-navy-200 my-3"/>
-      <a href="#toppers"    class="flex items-center gap-3 px-4 py-3 rounded-xl bg-crimson-600 text-white font-bold">🏆 Our Toppers</a>
-      <a href="#econtent"   class="flex items-center gap-3 px-4 py-3 rounded-xl border-2 border-navy-900 text-navy-900 font-bold hover:bg-navy-50">📚 E-Content</a>
-      <a href="#downloads"  class="flex items-center gap-3 px-4 py-3 rounded-xl border border-slate-300 text-slate-700 font-medium hover:bg-slate-50">⬇ Downloads</a>
-      <a href="#disclosure" class="flex items-center gap-3 px-4 py-3 rounded-xl border border-amber-400 text-amber-800 font-medium bg-amber-50 hover:bg-amber-100">📋 Mandatory Disclosure</a>
+      <div class="text-[10px] font-bold uppercase tracking-wider text-slate-400 px-3 py-1">Main Navigation</div>
+      <a href="#home"       class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-crimson-600 font-semibold bg-crimson-50/70">Home</a>
+      <a href="#about"      class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-700 font-medium hover:bg-slate-50">About Us</a>
+      <a href="#admission"  class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-700 font-medium hover:bg-slate-50">Admissions</a>
+      <a href="#guidelines" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-700 font-medium hover:bg-slate-50">Guidelines</a>
+      <a href="#gallery"    class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-700 font-medium hover:bg-slate-50">Gallery</a>
+      <a href="#contact"    class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-700 font-medium hover:bg-slate-50">Contact</a>
+      
+      <div class="text-[10px] font-bold uppercase tracking-wider text-slate-400 px-3 pt-4 pb-1">Quick Portals</div>
+      <a href="#toppers"    class="flex items-center justify-between px-3 py-2 rounded-xl text-slate-700 hover:bg-slate-50 text-sm font-medium">
+        <span class="flex items-center gap-2">🏆 Our Toppers</span>
+        <span class="text-xs text-crimson-600 font-semibold">Rankers</span>
+      </a>
+      <a href="#econtent"   class="flex items-center gap-2 px-3 py-2 rounded-xl text-slate-700 hover:bg-slate-50 text-sm font-medium">📚 E-Content</a>
+      <a href="#downloads"  class="flex items-center gap-2 px-3 py-2 rounded-xl text-slate-700 hover:bg-slate-50 text-sm font-medium">⬇ Downloads</a>
+      <a href="#disclosure" class="flex items-center gap-2 px-3 py-2 rounded-xl text-amber-800 bg-amber-50/50 hover:bg-amber-100/50 text-sm font-medium">📋 Mandatory Disclosure</a>
+      
+      <div class="pt-4 pb-2">
+        <a href="#admission" class="w-full flex items-center justify-center gap-2 bg-crimson-600 text-white font-semibold py-3 rounded-xl shadow-sm text-sm">
+          Online Admission / Enquiry
+        </a>
+      </div>
+
+      <div class="border-t border-slate-100 pt-3 text-xs text-slate-500 space-y-2">
+        <a href="tel:+918404900550" class="flex items-center gap-2 text-slate-700 font-medium hover:text-crimson-600">
+          📞 +91 8404900550
+        </a>
+        <a href="mailto:st.josephpublicschoolbegusarai@gmail.com" class="flex items-center gap-2 text-slate-600 break-all hover:text-crimson-600">
+          ✉ st.josephpublicschoolbegusarai@gmail.com
+        </a>
+      </div>
     </nav>
   </div>
 </div>
 
 <!-- PLACEHOLDER ANCHOR -->
 <div id="home"></div>
+
 
 <!-- ═══════════════════════════════════════════════════════════════
      SECTION 4 — HERO CAROUSEL
