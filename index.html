@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>St. Joseph Public School — Begusarai</title>
+  <meta name="description" content="St. Joseph Public School, Begusarai — Affiliated to C.B.S.E., New Delhi, Upto +2 Level. Managed by Kali Charan Singh Memorial Educational Trust." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            headline: ['"Plus Jakarta Sans"', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            crimson: {
+              50:  '#fff1f1',
+              100: '#ffe4e4',
+              200: '#fecdcd',
+              300: '#fca5a5',
+              400: '#f87171',
+              500: '#ef4444',
+              600: '#DC2626',
+              700: '#B91C1C',
+              800: '#991b1b',
+              900: '#7f1d1d',
+            },
+            navy: {
+              50:  '#f8fafc',
+              100: '#f1f5f9',
+              200: '#e2e8f0',
+              300: '#cbd5e1',
+              400: '#94a3b8',
+              500: '#64748b',
+              600: '#475569',
+              700: '#334155',
+              800: '#1E293B',
+              900: '#0F172A',
+            },
+          },
+          animation: {
+            marquee: 'marquee 30s linear infinite',
+            'fade-in': 'fadeIn 0.6s ease-out',
+            'slide-up': 'slideUp 0.6s ease-out',
+          },
+          keyframes: {
+            marquee: {
+              '0%':   { transform: 'translateX(100%)' },
+              '100%': { transform: 'translateX(-100%)' },
+            },
+            fadeIn: {
+              from: { opacity: '0' },
+              to:   { opacity: '1' },
+            },
+            slideUp: {
+              from: { opacity: '0', transform: 'translateY(24px)' },
+              to:   { opacity: '1', transform: 'translateY(0)' },
+            },
+          },
+          boxShadow: {
+            'card': '0 1px 3px 0 rgba(0,0,0,.08), 0 1px 2px -1px rgba(0,0,0,.06)',
+            'card-hover': '0 20px 25px -5px rgba(0,0,0,.12), 0 8px 10px -6px rgba(0,0,0,.08)',
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    /* ── Global ── */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: #0F172A; background: #ffffff; -webkit-font-smoothing: antialiased; }
+    h1, h2, h3, h4, h5, h6 { font-family: 'Plus Jakarta Sans', sans-serif; }
+
+    /* ── Marquee ── */
+    .marquee-wrapper { overflow: hidden; white-space: nowrap; position: relative; }
+    .marquee-track   { display: inline-flex; animation: marquee 32s linear infinite; }
+    .marquee-track:hover { animation-play-state: paused; }
+    @keyframes marquee {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ── Nav active link ── */
+    .nav-link { position: relative; transition: color .2s; }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px;
+      background: #DC2626; border-radius: 99px; transition: width .25s ease;
+    }
+    .nav-link:hover { color: #DC2626; }
+    .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+    .nav-link.active { color: #DC2626; }
+
+    /* ── Pill buttons ── */
+    .pill { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 99px; font-size: 11px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; transition: all .2s ease; white-space: nowrap; cursor: pointer; }
+    .pill:hover { transform: scale(1.04); }
+    .pill-crimson { background: #DC2626; color: #fff; border: 1.5px solid #DC2626; }
+    .pill-crimson:hover { background: #B91C1C; border-color: #B91C1C; }
+    .pill-navy { background: transparent; color: #0F172A; border: 1.5px solid #0F172A; }
+    .pill-navy:hover { background: #0F172A; color: #fff; }
+    .pill-slate { background: transparent; color: #475569; border: 1.5px solid #CBD5E1; }
+    .pill-slate:hover { background: #F1F5F9; color: #0F172A; }
+    .pill-amber { background: #FFFBEB; color: #92400E; border: 1.5px solid #F59E0B; }
+    .pill-amber:hover { background: #FEF3C7; }
+
+    /* ── Hero carousel ── */
+    .hero-slide { position: absolute; inset: 0; opacity: 0; transition: opacity .9s ease; }
+    .hero-slide.active { opacity: 1; }
+
+    /* ── Card hover ── */
+    .highlight-card { transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease; }
+    .highlight-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,.12); border-color: #DC2626 !important; }
+
+    /* ── Video card ── */
+    .video-card { transition: transform .3s ease, box-shadow .3s ease; }
+    .video-card:hover { transform: translateY(-4px); box-shadow: 0 16px 32px rgba(0,0,0,.14); }
+    .video-card:hover .play-btn { background: #DC2626; transform: scale(1.12); }
+    .play-btn { transition: background .2s, transform .2s; }
+
+    /* ── Scroll snap for testimonials ── */
+    .testimonial-track { display: flex; transition: transform .5s ease; }
+
+    /* ── Footer links ── */
+    .footer-link { transition: color .2s, padding-left .2s; display: inline-flex; align-items: center; }
+    .footer-link:hover { color: #DC2626; padding-left: 4px; }
+
+    /* ── Mobile drawer ── */
+    .mobile-drawer { transition: transform .3s ease; }
+
+    /* ── Floating progress bar in hero ── */
+    .hero-progress { height: 2px; background: #DC2626; transition: width .3s linear; border-radius: 0 2px 2px 0; }
+
+    /* ── Section eyebrow ── */
+    .eyebrow { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #DC2626; }
+
+    /* ── Badge "Now Hiring" ── */
+    @keyframes pulse-ring {
+      0%   { transform: scale(.95); box-shadow: 0 0 0 0 rgba(220,38,38,.5); }
+      70%  { transform: scale(1);   box-shadow: 0 0 0 8px rgba(220,38,38,0); }
+      100% { transform: scale(.95); box-shadow: 0 0 0 0 rgba(220,38,38,0); }
+    }
+    .hiring-badge { animation: pulse-ring 1.8s ease-out infinite; }
+
+    @media (max-width: 768px) {
+      .desktop-only { display: none !important; }
+    }
+    @media (min-width: 769px) {
+      .mobile-only { display: none !important; }
+    }
+  </style>
+</head>
+
+<body class="min-h-screen">
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SECTION 1 — TOP UTILITY BAR
+═══════════════════════════════════════════════════════════════ -->
+<div id="utility-bar" class="bg-navy-800 text-slate-300 text-xs sticky top-0 z-50">
+  <div class="max-w-screen-2xl mx-auto px-4 flex items-center justify-between h-9 gap-4">
+
+    <!-- Scrolling ticker -->
+    <div class="flex items-center gap-2 flex-1 min-w-0">
+      <span class="flex-shrink-0 bg-crimson-600 text-white px-2 py-0.5 rounded text-[10px] font-bold tracking-widest uppercase">NOTICE</span>
+      <div class="marquee-wrapper flex-1">
+        <div class="marquee-track">
+          <span class="pr-24">📢 Admissions Open — Visit school office between 09:00am to 04:00pm. Helplines: 8404900550, 8405850605</span>
+          <span class="pr-24">📢 Admissions Open — Visit school office between 09:00am to 04:00pm. Helplines: 8404900550, 8405850605</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quick contacts (desktop) -->
+    <div class="desktop-only flex items-center gap-5 flex-shrink-0">
+      <a href="tel:06243247153" class="flex items-center gap-1.5 hover:text-white transition-colors">
+        <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        06243-247153
+      </a>
+      <a href="mailto:st.josephpublicschoolbegusarai@gmail.com" class="flex items-center gap-1.5 hover:text-white transition-colors">
+        <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        st.josephpublicschoolbegusarai@gmail.com
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SECTION 2 — MAIN BRAND HEADER
+═══════════════════════════════════════════════════════════════ -->
+<header class="bg-white border-b border-navy-200 sticky top-9 z-40">
+  <div class="max-w-screen-xl mx-auto px-6 py-4 flex items-center gap-6">
+
+    <!-- Logo / Crest -->
+    <div class="flex-shrink-0">
+      <div class="w-20 h-20 rounded-full relative overflow-hidden shadow-lg ring-2 ring-crimson-600/30">
+        <!-- SVG Crest emblem -->
+        <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+          <defs>
+            <radialGradient id="crestBg" cx="50%" cy="40%" r="60%">
+              <stop offset="0%" stop-color="#1E293B"/>
+              <stop offset="100%" stop-color="#0F172A"/>
+            </radialGradient>
+            <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#F59E0B"/>
+              <stop offset="50%" stop-color="#FBBF24"/>
+              <stop offset="100%" stop-color="#D97706"/>
+            </linearGradient>
+          </defs>
+          <circle cx="60" cy="60" r="60" fill="url(#crestBg)"/>
+          <!-- Shield outline -->
+          <path d="M60 12 L88 22 L88 58 C88 76 60 92 60 92 C60 92 32 76 32 58 L32 22 Z" fill="#DC2626" stroke="url(#goldGrad)" stroke-width="2"/>
+          <!-- Book -->
+          <rect x="45" y="46" width="30" height="22" rx="2" fill="#fff" opacity=".15"/>
+          <line x1="60" y1="46" x2="60" y2="68" stroke="url(#goldGrad)" stroke-width="1.5"/>
+          <!-- Stars / laurel simplified -->
+          <circle cx="44" cy="34" r="3" fill="url(#goldGrad)"/>
+          <circle cx="60" cy="30" r="3" fill="url(#goldGrad)"/>
+          <circle cx="76" cy="34" r="3" fill="url(#goldGrad)"/>
+          <!-- SJPS text -->
+          <text x="60" y="84" text-anchor="middle" fill="url(#goldGrad)" font-size="7" font-family="Plus Jakarta Sans, sans-serif" font-weight="700" letter-spacing="2">SJPS</text>
+          <!-- Outer ring text -->
+          <circle cx="60" cy="60" r="55" fill="none" stroke="url(#goldGrad)" stroke-width=".8" stroke-dasharray="2,3"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- School Name & credentials (center) -->
+    <div class="flex-1 text-center">
+      <h1 class="font-headline text-3xl md:text-4xl font-extrabold tracking-tight text-navy-900 leading-none">
+        St. Joseph Public School
+      </h1>
+      <p class="mt-1.5 text-slate-500 text-sm font-medium">
+        Affiliated to C.B.S.E., New Delhi, Upto +2 Level&nbsp;&nbsp;·&nbsp;&nbsp;Affiliation No: 330225
+      </p>
+      <p class="mt-1 text-crimson-600 text-[11px] font-bold uppercase tracking-widest">
+        Managed by Kali Charan Singh Memorial Educational Trust
+      </p>
+    </div>
+
+    <!-- Contact block (desktop) -->
+    <div class="desktop-only flex-shrink-0 text-right space-y-1.5">
+      <a href="tel:06243247153" class="flex items-center justify-end gap-2 text-navy-900 text-sm font-medium hover:text-crimson-600 transition-colors">
+        <span>06243-247153</span>
+        <span class="w-8 h-8 bg-crimson-50 rounded-full flex items-center justify-center text-crimson-600">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+        </span>
+      </a>
+      <a href="mailto:st.josephpublicschoolbegusarai@gmail.com" class="flex items-center justify-end gap-2 text-navy-900 text-xs font-medium hover:text-crimson-600 transition-colors">
+        <span class="truncate max-w-[220px]">st.josephpublicschoolbegusarai@gmail.com</span>
+        <span class="w-8 h-8 bg-crimson-50 rounded-full flex items-center justify-center text-crimson-600 flex-shrink-0">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        </span>
+      </a>
+      <div class="flex items-center justify-end gap-1.5 pt-0.5">
+        <span class="text-[10px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200 px-2 py-0.5 rounded-full uppercase tracking-wide">CBSE</span>
+        <span class="text-[10px] font-semibold bg-blue-50 text-blue-700 border border-blue-200 px-2 py-0.5 rounded-full uppercase tracking-wide">Aff. 330225</span>
+      </div>
+    </div>
+
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SECTION 3 — STICKY NAVIGATION BAR
+═══════════════════════════════════════════════════════════════ -->
+<nav id="main-nav" class="bg-white/95 backdrop-blur-md border-b border-navy-200 sticky top-[calc(2.25rem+6rem)] z-30 shadow-sm">
+  <div class="max-w-screen-xl mx-auto px-6">
+    <div class="flex items-center justify-between h-14 gap-4">
+
+      <!-- Nav links (desktop) -->
+      <div class="desktop-only flex items-center gap-7">
+        <a href="#home"       class="nav-link active   text-sm font-semibold text-crimson-600">Home</a>
+        <a href="#about"      class="nav-link          text-sm font-semibold text-navy-700 hover:text-crimson-600">About</a>
+        <a href="#admission"  class="nav-link          text-sm font-semibold text-navy-700 hover:text-crimson-600">Admission</a>
+        <a href="#guidelines" class="nav-link          text-sm font-semibold text-navy-700 hover:text-crimson-600">Guidelines</a>
+        <a href="#gallery"    class="nav-link          text-sm font-semibold text-navy-700 hover:text-crimson-600">Gallery</a>
+        <a href="#contact"    class="nav-link          text-sm font-semibold text-navy-700 hover:text-crimson-600">Contact</a>
+      </div>
+
+      <!-- Action pills (desktop) -->
+      <div class="desktop-only flex items-center gap-2 flex-wrap">
+        <a href="#toppers"    class="pill pill-crimson">🏆 Our Toppers</a>
+        <a href="#econtent"   class="pill pill-navy">📚 E-Content</a>
+        <a href="#downloads"  class="pill pill-slate">⬇ Downloads</a>
+        <a href="#disclosure" class="pill pill-amber">📋 Mandatory Disclosure</a>
+      </div>
+
+      <!-- Mobile: school name + hamburger -->
+      <div class="mobile-only flex items-center justify-between w-full">
+        <span class="font-headline text-base font-bold text-navy-900">SJPS</span>
+        <button id="menu-btn" class="w-10 h-10 flex flex-col items-center justify-center gap-1.5 rounded-xl hover:bg-navy-100 transition-colors" aria-label="Open menu">
+          <span class="hamburger-line w-6 h-0.5 bg-navy-800 rounded transition-all duration-300"></span>
+          <span class="hamburger-line w-6 h-0.5 bg-navy-800 rounded transition-all duration-300"></span>
+          <span class="hamburger-line w-6 h-0.5 bg-navy-800 rounded transition-all duration-300"></span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile drawer -->
+<div id="mobile-drawer" class="mobile-drawer fixed inset-0 z-50 pointer-events-none">
+  <div id="drawer-overlay" class="absolute inset-0 bg-navy-900/60 backdrop-blur-sm opacity-0 transition-opacity duration-300"></div>
+  <div id="drawer-panel" class="absolute top-0 right-0 h-full w-72 bg-white shadow-2xl translate-x-full transition-transform duration-300 flex flex-col">
+    <div class="flex items-center justify-between p-5 border-b border-navy-200">
+      <span class="font-headline text-lg font-bold text-navy-900">Menu</span>
+      <button id="close-btn" class="w-9 h-9 flex items-center justify-center rounded-lg hover:bg-navy-100 transition-colors">
+        <svg class="w-5 h-5 text-navy-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <nav class="flex-1 overflow-y-auto p-5 space-y-1">
+      <a href="#home"       class="flex items-center gap-3 px-4 py-3 rounded-xl text-crimson-600 font-semibold bg-crimson-50">Home</a>
+      <a href="#about"      class="flex items-center gap-3 px-4 py-3 rounded-xl text-navy-800 font-medium hover:bg-navy-50">About</a>
+      <a href="#admission"  class="flex items-center gap-3 px-4 py-3 rounded-xl text-navy-800 font-medium hover:bg-navy-50">Admission</a>
+      <a href="#guidelines" class="flex items-center gap-3 px-4 py-3 rounded-xl text-navy-800 font-medium hover:bg-navy-50">Guidelines</a>
+      <a href="#gallery"    class="flex items-center gap-3 px-4 py-3 rounded-xl text-navy-800 font-medium hover:bg-navy-50">Gallery</a>
+      <a href="#contact"    class="flex items-center gap-3 px-4 py-3 rounded-xl text-navy-800 font-medium hover:bg-navy-50">Contact</a>
+      <hr class="border-navy-200 my-3"/>
+      <a href="#toppers"    class="flex items-center gap-3 px-4 py-3 rounded-xl bg-crimson-600 text-white font-bold">🏆 Our Toppers</a>
+      <a href="#econtent"   class="flex items-center gap-3 px-4 py-3 rounded-xl border-2 border-navy-900 text-navy-900 font-bold hover:bg-navy-50">📚 E-Content</a>
+      <a href="#downloads"  class="flex items-center gap-3 px-4 py-3 rounded-xl border border-slate-300 text-slate-700 font-medium hover:bg-slate-50">⬇ Downloads</a>
+      <a href="#disclosure" class="flex items-center gap-3 px-4 py-3 rounded-xl border border-amber-400 text-amber-800 font-medium bg-amber-50 hover:bg-amber-100">📋 Mandatory Disclosure</a>
+    </nav>
+  </div>
+</div>
+
+<!-- PLACEHOLDER ANCHOR -->
+<div id="home"></div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SECTION 4 — HERO CAROUSEL
+═══════════════════════════════════════════════════════════════ -->
+<section class="relative h-[85vh] min-h-[540px] max-h-[900px] overflow-hidden bg-navy-900">
+
+  <!-- Slides -->
+  <div id="hero-slides" class="relative w-full h-full">
+
+    <!-- Slide 1 — Campus -->
+    <div class="hero-slide active" style="background: linear-gradient(135deg, #0F172A 0%, #1E293B 40%, #991b1b 100%);">
+      <div class="absolute inset-0 opacity-20" style="background-image: url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1600&q=80'); background-size: cover; background-position: center;"></div>
+    </div>
+
+    <!-- Slide 2 — Lab / Science -->
+    <div class="hero-slide" style="background: linear-gradient(135deg, #0F172A 0%, #1E3A5F 60%, #0F172A 100%);">
+      <div class="absolute inset-0 opacity-20" style="background-image: url('https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1600&q=80'); background-size: cover; background-position: center;"></div>
+    </div>
+
+    <!-- Slide 3 — Sports -->
+    <div class="hero-slide" style="background: linear-gradient(135deg, #1E293B 0%, #065f46 60%, #0F172A 100%);">
+      <div class="absolute inset-0 opacity-20" style="background-image: url('https://images.unsplash.com/photo-1533107862482-0e6974b06ec4?w=1600&q=80'); background-size: cover; background-position: center;"></div>
+    </div>
+
+    <!-- Slide 4 — Classroom -->
+    <div class="hero-slide" style="background: linear-gradient(135deg, #7f1d1d 0%, #0F172A 60%, #1E293B 100%);">
+      <div class="absolute inset-0 opacity-15" style="background-image: url('https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=1600&q=80'); background-size: cover; background-position: center;"></div>
+    </div>
+
+  </div>
+
+  <!-- Gradient overlay -->
+  <div class="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-900/60 to-transparent pointer-events-none"></div>
+  <div class="absolute inset-0 bg-gradient-to-t from-navy-900/80 via-transparent to-transparent pointer-events-none"></div>
+
+  <!-- Hero content -->
+  <div class="relative z-10 h-full flex items-center">
+    <div class="max-w-screen-xl mx-auto px-6 md:px-10 w-full">
+      <div class="max-w-2xl">
+
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 bg-crimson-600/90 backdrop-blur-sm text-white text-xs font-bold px-4 py-2 rounded-full uppercase tracking-widest mb-6 animate-fade-in">
+          <span class="w-2 h-2 bg-white rounded-full animate-pulse"></span>
+          Everyday Towards Progress
+        </div>
+
+        <!-- Headline -->
+        <h2 class="font-headline text-4xl md:text-6xl font-extrabold text-white leading-tight tracking-tight mb-4 animate-slide-up">
+          Fostering Excellence<br class="hidden md:block"/>
+          <span class="text-crimson-400">in Begusarai</span>
+        </h2>
+
+        <!-- Sub -->
+        <p class="text-slate-300 text-base md:text-lg font-medium leading-relaxed mb-8 max-w-xl">
+          St. Joseph Public School — a CBSE affiliated institution shaping the leaders of tomorrow through knowledge, discipline, and holistic development.
+        </p>
+
+        <!-- CTAs -->
+        <div class="flex flex-wrap gap-4">
+          <a href="#admission" class="inline-flex items-center gap-2 bg-crimson-600 hover:bg-crimson-700 text-white font-bold px-7 py-3.5 rounded-full transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+            Apply for Admission
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+          <a href="#about" class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white font-semibold px-7 py-3.5 rounded-full border border-white/20 transition-all">
+            Explore School
+          </a>
+        </div>
+
+        <!-- Stats row -->
+        <div class="flex flex-wrap gap-6 mt-10">
+          <div class="text-white">
+            <div class="font-headline text-3xl font-extrabold">20+</div>
+            <div class="text-slate-400 text-xs uppercase tracking-wide mt-0.5">Years of Legacy</div>
+          </div>
+          <div class="w-px bg-white/20"></div>
+          <div class="text-white">
+            <div class="font-headline text-3xl font-extrabold">100%</div>
+            <div class="text-slate-400 text-xs uppercase tracking-wide mt-0.5">CBSE Results</div>
+          </div>
+          <div class="w-px bg-white/20"></div>
+          <div class="text-white">
+            <div class="font-headline text-3xl font-extrabold">2500+</div>
+            <div class="text-slate-400 text-xs uppercase tracking-wide mt-0.5">Students</div>
+          </div>
+          <div class="w-px bg-white/20"></div>
+          <div class="text-white">
+            <div class="font-headline text-3xl font-extrabold">45+</div>
+            <div class="text-slate-400 text-xs uppercase tracking-wide mt-0.5">Faculty Members</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Progress bar -->
+  <div class="absolute bottom-0 left-0 w-full h-0.5 bg-white/10">
+    <div id="hero-progress" class="hero-progress" style="width:0%"></div>
+  </div>
+
+  <!-- Slide indicators -->
+  <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-2 z-20">
+    <button class="slide-dot w-8 h-1.5 bg-crimson-500 rounded-full transition-all" data-index="0"></button>
+    <button class="slide-dot w-2 h-1.5 bg-white/40 rounded-full transition-all" data-index="1"></button>
+    <button class="slide-dot w-2 h-1.5 bg-white/40 rounded-full transition-all" data-index="2"></button>
+    <button class="slide-dot w-2 h-1.5 bg-white/40 rounded-full transition-all" data-index="3"></button>
+  </div>
+
+  <!-- Arrow nav -->
+  <button id="prev-slide" class="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white border border-white/20 transition-all hover:scale-110">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+  </button>
+  <button id="next-slide" class="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white border border-white/20 transition-all hover:scale-110">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+  </button>
+
+  <!-- Pause / Play -->
+  <button id="pause-btn" class="absolute bottom-6 right-6 z-20 w-9 h-9 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white border border-white/20 transition-all" aria-label="Pause carousel">
+    <svg id="pause-icon" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+    <svg id="play-icon" class="w-4 h-4 hidden" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+  </button>
+
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SECTION 5 — WELCOME & PHILOSOPHY
+═══════════════════════════════════════════════════════════════ -->
+<section id="about" class="py-20 bg-white">
+  <div class="max-w-screen-xl mx-auto px-6">
+    <div class="grid md:grid-cols-2 gap-16 items-center">
+
+      <!-- Text -->
+      <div>
+        <p class="eyebrow mb-3">About Our Institution</p>
+        <h2 class="font-headline text-4xl md:text-5xl font-extrabold text-navy-900 tracking-tight leading-tight mb-5">
+          Welcome to<br/>St. Joseph<br/>
+          <span class="text-crimson-600">Public School</span>
+        </h2>
+        <p class="text-slate-500 text-lg leading-relaxed mb-8">
+          We encourage our students to be innovative by providing them with tools and resources to thrive in an ever-evolving world.
+        </p>
+        <div class="space-y-4">
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 bg-crimson-50 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-5 h-5 text-crimson-600" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+            </div>
+            <div>
+              <h3 class="font-headline font-bold text-navy-900 mb-1">Founded 20th January 2002</h3>
+              <p class="text-slate-500 text-sm">Started with 1 student, located in the heart of Begusarai, behind G.D. College — just 1.5 km from the town center.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 bg-crimson-50 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-5 h-5 text-crimson-600" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg>
+            </div>
+            <div>
+              <h3 class="font-headline font-bold text-navy-900 mb-1">English Medium Institution</h3>
+              <p class="text-slate-500 text-sm">CBSE affiliated English medium school offering classes from Nursery through Class XII with a rigorous academic program.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 bg-crimson-50 rounded-xl flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-5 h-5 text-crimson-600" fill="currentColor" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+            </div>
+            <div>
+              <h3 class="font-headline font-bold text-navy-900 mb-1">Holistic Development</h3>
+              <p class="text-slate-500 text-sm">Beyond academics — sports, arts, debates, cultural programs, and leadership activities round out every student's growth.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Visual card -->
+      <div class="relative">
+        <div class="rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-navy-800 to-navy-900 aspect-[4/5] flex flex-col justify-end p-8">
+          <div class="absolute inset-0 opacity-30" style="background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&q=80'); background-size: cover; background-position: center;"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/50 to-transparent"></div>
+          <div class="relative z-10">
+            <div class="bg-crimson-600 text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-widest inline-block mb-4">
+              Est. January 2002
+            </div>
+            <h3 class="font-headline text-2xl font-bold text-white mb-2">A Legacy of Learning</h3>
+            <p class="text-slate-300 text-sm">Begusarai's premier institution nurturing character, curiosity, and academic excellence since 2002.</p>
+          </div>
+        </div>
+        <!-- Floating stat badge -->
+        <div class="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-5 border border-navy-200">
+          <div class="font-headline text-3xl font-extrabold text-crimson-600">2500+</div>
+          <div class="text-navy-600 text-xs font-semibold mt-1 uppercase tracking-wide">Current Students</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SECTION 6 — 5-CARD HIGHLIGHTS / REQUIREMENTS GRID
+═══════════════════════════════════════════════════════════════ -->
+<section id="admission" class="py-20 bg-navy-50">
+  <div class="max-w-screen-xl mx-auto px-6">
+
+    <div class="text-center mb-14">
+      <p class="eyebrow mb-3">What We Stand For</p>
+      <h2 class="font-headline text-4xl md:text-5xl font-extrabold text-navy-900 tracking-tight">School Highlights</h2>
+      <p class="text-slate-500 mt-3 text-lg max-w-2xl mx-auto">Discover our guiding philosophy, academic rigor, and opportunities that shape the next generation.</p>
+    </div>
+
+    <!-- 5-Card Bento Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- Card 1: Aims & Objectives -->
+      <div class="highlight-card bg-white rounded-2xl p-8 border border-navy-200 shadow-card cursor-pointer">
+        <div class="w-14 h-14 bg-crimson-600 rounded-2xl flex items-center justify-center mb-5 shadow-lg">
+          <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94A5.01 5.01 0 0011 15.9V18H9v2h6v-2h-2v-2.1a5.01 5.01 0 003.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zm-2 3c0 1.65-1.35 3-3 3h-4c-1.65 0-3-1.35-3-3V7h10v1z"/></svg>
+        </div>
+        <div class="text-[10px] font-bold uppercase tracking-widest text-crimson-500 mb-2">Aims & Objectives</div>
+        <h3 class="font-headline text-xl font-bold text-navy-900 mb-3">Nurturing Every Child's Potential</h3>
+        <p class="text-slate-500 text-sm leading-relaxed mb-5">
+          Every child is born with immense innate potential. The prime objective of this institution is to nurture curiosity, discipline, and character.
+        </p>
+        <a href="#about" class="inline-flex items-center gap-1.5 text-crimson-600 text-sm font-semibold group">
+          Read More
+          <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+      </div>
+
+      <!-- Card 2: Motto & Vision -->
+      <div class="highlight-card bg-white rounded-2xl p-8 border border-navy-200 shadow-card cursor-pointer">
+        <div class="w-14 h-14 bg-navy-800 rounded-2xl flex items-center justify-center mb-5 shadow-lg">
+          <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+        </div>
+        <div class="text-[10px] font-bold uppercase tracking-widest text-navy-500 mb-2">Motto & Vision</div>
+        <h3 class="font-headline text-xl font-bold text-navy-900 mb-3">Everyday Towards Progress</h3>
+        <p class="text-slate-500 text-sm leading-relaxed mb-5">
+          The vision of the school is aptly signified in its motto — "Everyday Towards Progress" — inspiring continuous intellectual and moral growth.
+        </p>
+        <a href="#about" class="inline-flex items-center gap-1.5 text-navy-700 text-sm font-semibold group hover:text-crimson-600">
+          Read More
+          <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+      </div>
+
+      <!-- Card 3: Academic Program -->
+      <div class="highlight-card bg-white rounded-2xl p-8 border border-navy-200 shadow-card cursor-pointer">
+        <div class="w-14 h-14 bg-emerald-600 rounded-2xl flex items-center justify-center mb-5 shadow-lg">
+          <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM9 4h2v5l-1-.75L9 9V4zm9 16H6V4h1v9l3-2.25L13 13V4h5v16z"/></svg>
+        </div>
+        <div class="text-[10px] font-bold uppercase tracking-widest text-emerald-600 mb-2">Academic Program</div>
+        <h3 class="font-headline text-xl font-bold text-navy-900 mb-3">CBSE English Medium +2</h3>
+        <p class="text-slate-500 text-sm leading-relaxed mb-5">
+          The academic session runs from April to March. Ours is an English medium institution affiliated with CBSE up to +2 level.
+        </p>
+        <a href="#admission" class="inline-flex items-center gap-1.5 text-emerald-600 text-sm font-semibold group">
+          Read More
+          <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+      </div>
+
+      <!-- Card 4: School Activities -->
+      <div class="highlight-card bg-white rounded-2xl p-8 border border-navy-200 shadow-card cursor-pointer">
+        <div class="w-14 h-14 bg-violet-600 rounded-2xl flex items-center justify-center mb-5 shadow-lg">
+          <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm0 16c-3.86 0-7-3.14-7-7s3.14-7 7-7 7 3.14 7 7-3.14 7-7 7zm1-11h-2v3H8v2h3v3h2v-3h3v-2h-3V8z"/></svg>
+        </div>
+        <div class="text-[10px] font-bold uppercase tracking-widest text-violet-500 mb-2">School Activities</div>
+        <h3 class="font-headline text-xl font-bold text-navy-900 mb-3">Holistic Growth Programs</h3>
+        <p class="text-slate-500 text-sm leading-relaxed mb-5">
+          Holistic growth through co-curricular activities, debates, sports championships, and cultural arts programs.
+        </p>
+        <a href="#gallery" class="inline-flex items-center gap-1.5 text-violet-600 text-sm font-semibold group">
+          Read More
+          <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+      </div>
+
+      <!-- Card 5: Career / Requirement (Now Hiring) — spans 2 cols on md -->
+      <div class="highlight-card bg-gradient-to-br from-navy-900 to-navy-800 rounded-2xl p-8 border border-navy-700 shadow-card cursor-pointer md:col-span-2 lg:col-span-1">
+        <div class="flex items-start justify-between mb-5">
+          <div class="w-14 h-14 bg-amber-500 rounded-2xl flex items-center justify-center shadow-lg">
+            <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M20 6h-2.18c.07-.44.18-.88.18-1.36C18 2.53 15.47 0 12.36 0 10.5 0 8.9.92 7.86 2.22L7 3.08 6.14 2.22C5.09.92 3.5 0 1.64 0-1.47 0-4 2.53-4 5.64c0 .48.11.92.18 1.36H-6v14h28V6h-2zM13.5 4h1c.83 0 1.5.67 1.5 1.5S15.33 7 14.5 7h-1V4zm-3 0h1v3h-1V4zM11 4c-.83 0-1.5-.67-1.5-1.5S10.17 1 11 1s1.5.67 1.5 1.5S11.83 4 11 4z"/></svg>
+          </div>
+          <div class="hiring-badge bg-crimson-600 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">
+            Now Hiring
+          </div>
+        </div>
+        <div class="text-[10px] font-bold uppercase tracking-widest text-amber-400 mb-2">Open Positions</div>
+        <h3 class="font-headline text-xl font-bold text-white mb-4">Career Opportunities</h3>
+        <ul class="space-y-2 mb-6">
+          <li class="flex items-center gap-2 text-slate-300 text-sm">
+            <span class="w-1.5 h-1.5 bg-amber-400 rounded-full flex-shrink-0"></span>
+            <strong class="text-white mr-1">PGT</strong> — Biology, Chemistry, English, Accountancy
+          </li>
+          <li class="flex items-center gap-2 text-slate-300 text-sm">
+            <span class="w-1.5 h-1.5 bg-amber-400 rounded-full flex-shrink-0"></span>
+            <strong class="text-white mr-1">TGT</strong> — English, Science, Sanskrit
+          </li>
+          <li class="flex items-center gap-2 text-slate-300 text-sm">
+            <span class="w-1.5 h-1.5 bg-amber-400 rounded-full flex-shrink-0"></span>
+            Music Teacher
+          </li>
+          <li class="flex items-center gap-2 text-slate-300 text-sm">
+            <span class="w-1.5 h-1.5 bg-amber-400 rounded-full flex-shrink-0"></span>
+            Hostel Warden
+          </li>
+        </ul>
+        <a href="#contact" class="inline-flex items-center gap-2 bg-crimson-600 hover:bg-crimson-700 text-white font-bold px-6 py-3 rounded-xl transition-all text-sm shadow-lg">
+          Apply Now
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SECTION 7 — LEADERSHIP TESTIMONIALS / CHAIRMAN'S MESSAGE
+═══════════════════════════════════════════════════════════════ -->
+<section class="py-20 bg-white overflow-hidden">
+  <div class="max-w-screen-xl mx-auto px-6">
+
+    <div class="text-center mb-14">
+      <p class="eyebrow mb-3">Words of Wisdom</p>
+      <h2 class="font-headline text-4xl md:text-5xl font-extrabold text-navy-900 tracking-tight">Leadership Message</h2>
+    </div>
+
+    <!-- Testimonial card -->
+    <div class="max-w-4xl mx-auto relative">
+
+      <!-- Large quote mark -->
+      <div class="absolute -top-4 -left-4 text-crimson-100 select-none pointer-events-none">
+        <svg width="80" height="60" viewBox="0 0 80 60" fill="currentColor"><path d="M0 60V36C0 16 13.3 4 40 0l5 8C28 11.3 21.3 18 20 28h20v32H0zm40 0V36C40 16 53.3 4 80 0l5 8C68 11.3 61.3 18 60 28h20v32H40z"/></svg>
+      </div>
+
+      <div class="bg-gradient-to-br from-navy-50 to-white rounded-3xl p-10 md:p-14 border border-navy-200 shadow-lg">
+        <div class="flex flex-col md:flex-row gap-10 items-start">
+
+          <!-- Avatar -->
+          <div class="flex-shrink-0">
+            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-crimson-500 to-crimson-700 flex items-center justify-center ring-4 ring-crimson-200 shadow-xl">
+              <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v2h20v-2c0-3.3-6.7-5-10-5z"/></svg>
+            </div>
+            <div class="mt-4 text-center">
+              <div class="font-headline font-bold text-navy-900 text-sm">Chairman</div>
+              <div class="text-slate-500 text-xs mt-0.5">St. Joseph Public School</div>
+            </div>
+          </div>
+
+          <!-- Quote -->
+          <div class="flex-1">
+            <blockquote class="text-navy-700 text-lg md:text-xl leading-relaxed font-medium italic mb-6">
+              "In school the teacher is a parent. At home the parent is a teacher. The child is the centre of our universe. Honing a child is perhaps the biggest responsibility for all of us. Now a days, an incessant deterioration of real education demands our deepest commitment to authentic values."
+            </blockquote>
+            <div class="flex items-center gap-3">
+              <div class="h-0.5 w-12 bg-crimson-600 rounded"></div>
+              <span class="text-crimson-600 font-bold text-sm uppercase tracking-wider">Chairman's Message</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Pagination dots -->
+      <div class="flex items-center justify-center gap-2 mt-8">
+        <button class="w-8 h-1.5 bg-crimson-500 rounded-full"></button>
+        <button class="w-2 h-1.5 bg-navy-200 rounded-full hover:bg-navy-300 transition-colors"></button>
+        <button class="w-2 h-1.5 bg-navy-200 rounded-full hover:bg-navy-300 transition-colors"></button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SECTION 8 — VIDEO SHOWCASE / MEDIA GALLERY
+═══════════════════════════════════════════════════════════════ -->
+<section id="gallery" class="py-20 bg-navy-50">
+  <div class="max-w-screen-xl mx-auto px-6">
+
+    <div class="text-center mb-14">
+      <p class="eyebrow mb-3">Campus Life</p>
+      <h2 class="font-headline text-4xl md:text-5xl font-extrabold text-navy-900 tracking-tight">Video Showcase</h2>
+      <p class="text-slate-500 mt-3 text-lg">Glimpses of our vibrant school events and annual celebrations.</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+      <!-- Video Card 1 -->
+      <div class="video-card bg-white rounded-2xl overflow-hidden border border-navy-200 shadow-card cursor-pointer" onclick="openVideoModal('Ganesh Vandana — Annual Day Inauguration')">
+        <div class="relative aspect-video bg-gradient-to-br from-amber-800 to-amber-900 overflow-hidden">
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="w-14 h-14 bg-white/20 rounded-full flex items-center justify-center play-btn">
+              <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+          </div>
+          <div class="absolute inset-0 opacity-30" style="background: radial-gradient(circle at 30% 40%, rgba(245,158,11,.6), transparent 70%)"></div>
+          <div class="absolute top-3 right-3 bg-black/60 text-white text-xs px-2 py-1 rounded-md font-mono">3:42</div>
+        </div>
+        <div class="p-4">
+          <div class="text-[10px] font-bold uppercase tracking-widest text-amber-600 mb-1">Annual Day</div>
+          <h4 class="font-headline font-bold text-navy-900 text-sm">Ganesh Vandana</h4>
+          <p class="text-slate-500 text-xs mt-1">Annual Day Inauguration Ceremony</p>
+        </div>
+      </div>
+
+      <!-- Video Card 2 -->
+      <div class="video-card bg-white rounded-2xl overflow-hidden border border-navy-200 shadow-card cursor-pointer" onclick="openVideoModal('Lamp Lighting — Auspicious Ceremony')">
+        <div class="relative aspect-video bg-gradient-to-br from-orange-800 to-red-900 overflow-hidden">
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="w-14 h-14 bg-white/20 rounded-full flex items-center justify-center play-btn">
+              <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+          </div>
+          <div class="absolute inset-0 opacity-30" style="background: radial-gradient(circle at 70% 30%, rgba(251,146,60,.7), transparent 70%)"></div>
+          <div class="absolute top-3 right-3 bg-black/60 text-white text-xs px-2 py-1 rounded-md font-mono">2:15</div>
+        </div>
+        <div class="p-4">
+          <div class="text-[10px] font-bold uppercase tracking-widest text-orange-600 mb-1">Ceremony</div>
+          <h4 class="font-headline font-bold text-navy-900 text-sm">Lamp Lighting</h4>
+          <p class="text-slate-500 text-xs mt-1">Auspicious Inaugural Ceremony</p>
+        </div>
+      </div>
+
+      <!-- Video Card 3 -->
+      <div class="video-card bg-white rounded-2xl overflow-hidden border border-navy-200 shadow-card cursor-pointer" onclick="openVideoModal('Welcome Song & Dance — Cultural Program')">
+        <div class="relative aspect-video bg-gradient-to-br from-violet-800 to-navy-900 overflow-hidden">
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="w-14 h-14 bg-white/20 rounded-full flex items-center justify-center play-btn">
+              <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+          </div>
+          <div class="absolute inset-0 opacity-30" style="background: radial-gradient(circle at 50% 60%, rgba(139,92,246,.7), transparent 70%)"></div>
+          <div class="absolute top-3 right-3 bg-black/60 text-white text-xs px-2 py-1 rounded-md font-mono">5:08</div>
+        </div>
+        <div class="p-4">
+          <div class="text-[10px] font-bold uppercase tracking-widest text-violet-600 mb-1">Cultural Program</div>
+          <h4 class="font-headline font-bold text-navy-900 text-sm">Welcome Song & Dance</h4>
+          <p class="text-slate-500 text-xs mt-1">Student Cultural Performance</p>
+        </div>
+      </div>
+
+      <!-- Video Card 4 -->
+      <div class="video-card bg-white rounded-2xl overflow-hidden border border-navy-200 shadow-card cursor-pointer" onclick="openVideoModal('Chairman\'s Speech — Vision & Address')">
+        <div class="relative aspect-video bg-gradient-to-br from-navy-800 to-crimson-900 overflow-hidden">
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="w-14 h-14 bg-white/20 rounded-full flex items-center justify-center play-btn">
+              <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+          </div>
+          <div class="absolute inset-0 opacity-30" style="background: radial-gradient(circle at 40% 40%, rgba(220,38,38,.5), transparent 70%)"></div>
+          <div class="absolute top-3 right-3 bg-black/60 text-white text-xs px-2 py-1 rounded-md font-mono">8:30</div>
+        </div>
+        <div class="p-4">
+          <div class="text-[10px] font-bold uppercase tracking-widest text-crimson-600 mb-1">Leadership</div>
+          <h4 class="font-headline font-bold text-navy-900 text-sm">Chairman's Speech</h4>
+          <p class="text-slate-500 text-xs mt-1">Vision, Values & Address</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Video Modal -->
+<div id="video-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-navy-900/90 backdrop-blur-sm">
+  <div class="bg-white rounded-3xl p-8 max-w-lg w-full mx-6 shadow-2xl">
+    <div class="flex items-center justify-between mb-4">
+      <h3 id="modal-title" class="font-headline font-bold text-navy-900"></h3>
+      <button onclick="closeVideoModal()" class="w-9 h-9 flex items-center justify-center rounded-xl hover:bg-navy-100 transition-colors">
+        <svg class="w-5 h-5 text-navy-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="aspect-video bg-navy-100 rounded-2xl flex items-center justify-center">
+      <p class="text-slate-500 text-sm text-center px-6">Video content is managed by the school administration.<br/>Please contact the school office for access.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     SECTION 9 — COMPREHENSIVE FOOTER
+═══════════════════════════════════════════════════════════════ -->
+<footer id="contact" class="bg-navy-900 text-slate-300">
+
+  <!-- Main footer grid -->
+  <div class="max-w-screen-xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-3 gap-12">
+
+    <!-- Column 1: About Us -->
+    <div>
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-10 h-10 rounded-full bg-crimson-600 flex items-center justify-center shadow-lg">
+          <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3 class="font-headline font-bold text-white text-lg">St. Joseph Public School</h3>
+      </div>
+      <p class="text-slate-400 text-sm leading-relaxed mb-5">
+        The school was founded on 20th January 2002 with 1 (one) student. It is located in the heart of Begusarai town, behind G. D. College. It is just one and half kilometers away from Begusarai.
+      </p>
+      <a href="#about" class="footer-link text-crimson-400 text-sm font-semibold gap-1.5 hover:text-crimson-300">
+        Learn More
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+      <!-- CBSE badge -->
+      <div class="mt-6 inline-flex items-center gap-2 bg-navy-800 border border-navy-700 rounded-xl px-4 py-3">
+        <svg class="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+        <div>
+          <div class="text-white text-xs font-bold">CBSE Affiliated</div>
+          <div class="text-slate-400 text-[10px]">Affiliation No: 330225</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Column 2: Quick Links -->
+    <div>
+      <h3 class="font-headline font-bold text-white text-lg mb-6">Quick Links</h3>
+      <ul class="space-y-3">
+        <li><a href="#about"      class="footer-link text-slate-400 text-sm hover:text-crimson-400 gap-1.5">→ About Us</a></li>
+        <li><a href="#admission"  class="footer-link text-slate-400 text-sm hover:text-crimson-400 gap-1.5">→ Academic Curriculum</a></li>
+        <li><a href="#gallery"    class="footer-link text-slate-400 text-sm hover:text-crimson-400 gap-1.5">→ Campus Gallery</a></li>
+        <li><a href="#admission"  class="footer-link text-slate-400 text-sm hover:text-crimson-400 gap-1.5">→ Admissions</a></li>
+        <li><a href="#toppers"    class="footer-link text-slate-400 text-sm hover:text-crimson-400 gap-1.5">→ Toppers List</a></li>
+        <li><a href="#disclosure" class="footer-link text-slate-400 text-sm hover:text-crimson-400 gap-1.5">→ Mandatory Public Disclosure</a></li>
+      </ul>
+      <div class="mt-8">
+        <h4 class="font-semibold text-white text-sm mb-3">Office Hours</h4>
+        <div class="flex items-center gap-2 text-slate-400 text-sm">
+          <svg class="w-4 h-4 text-crimson-400" fill="currentColor" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
+          Monday – Saturday: 09:00 AM – 04:00 PM
+        </div>
+      </div>
+    </div>
+
+    <!-- Column 3: Contact -->
+    <div>
+      <h3 class="font-headline font-bold text-white text-lg mb-6">Contact & Campus</h3>
+      <ul class="space-y-4">
+        <li class="flex items-start gap-3">
+          <span class="w-8 h-8 bg-crimson-600/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+            <svg class="w-4 h-4 text-crimson-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          </span>
+          <div>
+            <div class="text-white text-xs font-semibold mb-0.5">Campus Address</div>
+            <p class="text-slate-400 text-sm">Behind G.D. College, Kali Nagar, Begusarai, Bihar</p>
+          </div>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="w-8 h-8 bg-crimson-600/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+            <svg class="w-4 h-4 text-crimson-400" fill="currentColor" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>
+          </span>
+          <div>
+            <div class="text-white text-xs font-semibold mb-0.5">Phone Numbers</div>
+            <p class="text-slate-400 text-sm">06243-247153<br/>+91 8404900550<br/>+91 8405850605</p>
+          </div>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="w-8 h-8 bg-crimson-600/20 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5">
+            <svg class="w-4 h-4 text-crimson-400" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          </span>
+          <div>
+            <div class="text-white text-xs font-semibold mb-0.5">Email</div>
+            <a href="mailto:st.josephpublicschoolbegusarai@gmail.com" class="text-slate-400 text-sm hover:text-crimson-400 transition-colors break-all">
+              st.josephpublicschoolbegusarai@gmail.com
+            </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Bottom legal bar -->
+  <div class="bg-navy-800 border-t border-navy-700">
+    <div class="max-w-screen-xl mx-auto px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <p class="text-slate-400 text-xs">
+        © 2026 St. Joseph Public School. All rights reserved.
+      </p>
+      <div class="flex items-center gap-4">
+        <a href="#" class="text-slate-400 text-xs hover:text-crimson-400 transition-colors">Terms & Conditions</a>
+        <span class="text-navy-600">·</span>
+        <a href="#" class="text-slate-400 text-xs hover:text-crimson-400 transition-colors">Privacy Policy</a>
+        <span class="text-navy-600">·</span>
+        <a href="#" class="text-slate-400 text-xs hover:text-crimson-400 transition-colors">Refund Policy</a>
+      </div>
+    </div>
+  </div>
+
+</footer>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     JAVASCRIPT
+═══════════════════════════════════════════════════════════════ -->
+<script>
+  // ── Hero Carousel ──────────────────────────────────────────────
+  const slides     = document.querySelectorAll('.hero-slide');
+  const dots       = document.querySelectorAll('.slide-dot');
+  const progressEl = document.getElementById('hero-progress');
+  let currentSlide = 0;
+  let paused       = false;
+  let intervalId   = null;
+  let progressVal  = 0;
+  let progressInterval = null;
+  const DURATION   = 5000;
+  const TICK       = 50;
+
+  function goToSlide(index) {
+    slides[currentSlide].classList.remove('active');
+    dots[currentSlide].classList.remove('w-8', 'bg-crimson-500');
+    dots[currentSlide].classList.add('w-2', 'bg-white/40');
+    currentSlide = (index + slides.length) % slides.length;
+    slides[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('w-8', 'bg-crimson-500');
+    dots[currentSlide].classList.remove('w-2', 'bg-white/40');
+    resetProgress();
+  }
+
+  function resetProgress() {
+    progressVal = 0;
+    progressEl.style.width = '0%';
+    clearInterval(progressInterval);
+    if (!paused) startProgress();
+  }
+
+  function startProgress() {
+    progressInterval = setInterval(() => {
+      progressVal += (TICK / DURATION) * 100;
+      progressEl.style.width = Math.min(progressVal, 100) + '%';
+    }, TICK);
+  }
+
+  function startAutoplay() {
+    intervalId = setInterval(() => {
+      if (!paused) goToSlide(currentSlide + 1);
+    }, DURATION);
+  }
+
+  document.getElementById('prev-slide').addEventListener('click', () => {
+    goToSlide(currentSlide - 1);
+    clearInterval(intervalId);
+    startAutoplay();
+  });
+  document.getElementById('next-slide').addEventListener('click', () => {
+    goToSlide(currentSlide + 1);
+    clearInterval(intervalId);
+    startAutoplay();
+  });
+  dots.forEach((dot, i) => dot.addEventListener('click', () => {
+    goToSlide(i);
+    clearInterval(intervalId);
+    startAutoplay();
+  }));
+  document.getElementById('pause-btn').addEventListener('click', () => {
+    paused = !paused;
+    document.getElementById('pause-icon').classList.toggle('hidden', paused);
+    document.getElementById('play-icon').classList.toggle('hidden', !paused);
+    if (paused) {
+      clearInterval(progressInterval);
+    } else {
+      startProgress();
+    }
+  });
+
+  startAutoplay();
+  resetProgress();
+
+  // ── Mobile Drawer ───────────────────────────────────────────────
+  const menuBtn      = document.getElementById('menu-btn');
+  const closeBtn     = document.getElementById('close-btn');
+  const drawer       = document.getElementById('mobile-drawer');
+  const drawerOverlay = document.getElementById('drawer-overlay');
+  const drawerPanel  = document.getElementById('drawer-panel');
+
+  function openDrawer() {
+    drawer.classList.remove('pointer-events-none');
+    drawerOverlay.classList.remove('opacity-0');
+    drawerPanel.classList.remove('translate-x-full');
+  }
+  function closeDrawer() {
+    drawerOverlay.classList.add('opacity-0');
+    drawerPanel.classList.add('translate-x-full');
+    setTimeout(() => drawer.classList.add('pointer-events-none'), 300);
+  }
+  menuBtn?.addEventListener('click', openDrawer);
+  closeBtn?.addEventListener('click', closeDrawer);
+  drawerOverlay?.addEventListener('click', closeDrawer);
+  drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
+
+  // ── Video Modal ─────────────────────────────────────────────────
+  const videoModal  = document.getElementById('video-modal');
+  const modalTitle  = document.getElementById('modal-title');
+  function openVideoModal(title) {
+    modalTitle.textContent = title;
+    videoModal.classList.remove('hidden');
+    videoModal.classList.add('flex');
+  }
+  function closeVideoModal() {
+    videoModal.classList.add('hidden');
+    videoModal.classList.remove('flex');
+  }
+  videoModal.addEventListener('click', (e) => {
+    if (e.target === videoModal) closeVideoModal();
+  });
+
+  // ── Sticky nav shadow on scroll ─────────────────────────────────
+  window.addEventListener('scroll', () => {
+    const nav = document.getElementById('main-nav');
+    if (window.scrollY > 20) {
+      nav.classList.add('shadow-md');
+    } else {
+      nav.classList.remove('shadow-md');
+    }
+  });
+</script>
+
+</body>
+</html>
