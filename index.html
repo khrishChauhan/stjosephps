@@ -550,28 +550,40 @@
 
     <!-- Slide 1 — Sports & Athletics Championship -->
     <div class="hero-slide active">
-      <div class="hero-bg-img absolute inset-0 w-full h-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1546519638405-a9ee65500f4b?w=1920&q=90');"></div>
+      <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=1600&q=80"
+           alt="St. Joseph Public School students participating in annual sports tournament"
+           loading="eager"
+           class="hero-bg-img absolute inset-0 w-full h-full object-cover object-center bg-slate-900" />
       <div class="absolute inset-0 bg-gradient-to-r from-slate-950/85 sm:from-slate-950/90 via-slate-950/65 sm:via-slate-950/75 to-slate-900/40"></div>
       <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-slate-950/40"></div>
     </div>
 
     <!-- Slide 2 — Advanced STEM & Science Labs -->
     <div class="hero-slide">
-      <div class="hero-bg-img absolute inset-0 w-full h-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1532094349884-543559c5bd9b?w=1920&q=90');"></div>
+      <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=1600&q=80"
+           alt="Senior secondary students conducting experiments in modern physics & chemistry lab"
+           loading="lazy"
+           class="hero-bg-img absolute inset-0 w-full h-full object-cover object-center bg-slate-900" />
       <div class="absolute inset-0 bg-gradient-to-r from-slate-950/85 sm:from-slate-950/90 via-slate-950/65 sm:via-slate-950/75 to-slate-900/40"></div>
       <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-slate-950/40"></div>
     </div>
 
     <!-- Slide 3 — Interactive Smart Classrooms & Arts -->
     <div class="hero-slide">
-      <div class="hero-bg-img absolute inset-0 w-full h-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1920&q=90');"></div>
+      <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1600&q=80"
+           alt="Interactive digital classroom session at St. Joseph Public School"
+           loading="lazy"
+           class="hero-bg-img absolute inset-0 w-full h-full object-cover object-center bg-slate-900" />
       <div class="absolute inset-0 bg-gradient-to-r from-slate-950/85 sm:from-slate-950/90 via-slate-950/65 sm:via-slate-950/75 to-slate-900/40"></div>
       <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-slate-950/40"></div>
     </div>
 
-    <!-- Slide 4 — Academic Honors & Annual Day Celebrations -->
+    <!-- Slide 4 — Academic Honors & Library -->
     <div class="hero-slide">
-      <div class="hero-bg-img absolute inset-0 w-full h-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=1920&q=90');"></div>
+      <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=1600&q=80"
+           alt="Knowledge hub and library resources at St. Joseph Public School"
+           loading="lazy"
+           class="hero-bg-img absolute inset-0 w-full h-full object-cover object-center bg-slate-900" />
       <div class="absolute inset-0 bg-gradient-to-r from-slate-950/85 sm:from-slate-950/90 via-slate-950/65 sm:via-slate-950/75 to-slate-900/40"></div>
       <div class="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-transparent to-slate-950/40"></div>
     </div>
@@ -779,11 +791,14 @@
 
       <!-- Visual card -->
       <div class="relative">
-        <div class="rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-navy-800 to-navy-900 aspect-[4/5] flex flex-col justify-end p-8">
-          <div class="absolute inset-0 opacity-30" style="background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&q=80'); background-size: cover; background-position: center;"></div>
-          <div class="absolute inset-0 bg-gradient-to-t from-navy-900 via-navy-900/50 to-transparent"></div>
+        <div class="rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-navy-800 to-navy-900 aspect-[4/5] flex flex-col justify-end p-8 relative group">
+          <img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=800&q=80"
+               alt="A Legacy of Learning — St. Joseph Public School Campus"
+               loading="lazy"
+               class="absolute inset-0 w-full h-full object-cover opacity-45 group-hover:scale-105 transition-transform duration-700" />
+          <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-900/60 to-transparent"></div>
           <div class="relative z-10">
-            <div class="bg-crimson-600 text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-widest inline-block mb-4">
+            <div class="bg-crimson-600 text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-widest inline-block mb-4 shadow-sm">
               Est. January 2002
             </div>
             <h3 class="font-headline text-2xl font-bold text-white mb-2">A Legacy of Learning</h3>
@@ -817,76 +832,109 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
       <!-- Card 1: Aims & Objectives -->
-      <div class="highlight-card bg-white rounded-2xl p-8 border border-navy-200 shadow-card cursor-pointer">
-        <div class="w-14 h-14 bg-crimson-600 rounded-2xl flex items-center justify-center mb-5 shadow-lg">
-          <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94A5.01 5.01 0 0011 15.9V18H9v2h6v-2h-2v-2.1a5.01 5.01 0 003.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zm-2 3c0 1.65-1.35 3-3 3h-4c-1.65 0-3-1.35-3-3V7h10v1z"/></svg>
+      <div class="highlight-card bg-white rounded-2xl p-6 sm:p-7 border border-navy-200 shadow-card cursor-pointer group">
+        <div class="relative aspect-video rounded-xl overflow-hidden mb-5 bg-slate-100">
+          <img src="https://images.unsplash.com/photo-1567168544686-b4815a5101fa?auto=format&fit=crop&w=800&q=80"
+               alt="Student holding academic achievement award at St. Joseph Public School"
+               loading="lazy"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
+          <div class="absolute bottom-3 left-3 w-11 h-11 bg-crimson-600 rounded-xl flex items-center justify-center shadow-lg">
+            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94A5.01 5.01 0 0011 15.9V18H9v2h6v-2h-2v-2.1a5.01 5.01 0 003.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zm-2 3c0 1.65-1.35 3-3 3h-4c-1.65 0-3-1.35-3-3V7h10v1z"/></svg>
+          </div>
         </div>
         <div class="text-[10px] font-bold uppercase tracking-widest text-crimson-500 mb-2">Aims & Objectives</div>
-        <h3 class="font-headline text-xl font-bold text-navy-900 mb-3">Nurturing Every Child's Potential</h3>
+        <h3 class="font-headline text-xl font-bold text-navy-900 mb-3 group-hover:text-crimson-600 transition-colors">Nurturing Every Child's Potential</h3>
         <p class="text-slate-500 text-sm leading-relaxed mb-5">
           Every child is born with immense innate potential. The prime objective of this institution is to nurture curiosity, discipline, and character.
         </p>
-        <a href="#about" class="inline-flex items-center gap-1.5 text-crimson-600 text-sm font-semibold group">
+        <a href="#about" class="inline-flex items-center gap-1.5 text-crimson-600 text-sm font-semibold group/link">
           Read More
-          <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          <svg class="w-4 h-4 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
         </a>
       </div>
 
       <!-- Card 2: Motto & Vision -->
-      <div class="highlight-card bg-white rounded-2xl p-8 border border-navy-200 shadow-card cursor-pointer">
-        <div class="w-14 h-14 bg-navy-800 rounded-2xl flex items-center justify-center mb-5 shadow-lg">
-          <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      <div class="highlight-card bg-white rounded-2xl p-6 sm:p-7 border border-navy-200 shadow-card cursor-pointer group">
+        <div class="relative aspect-video rounded-xl overflow-hidden mb-5 bg-slate-100">
+          <img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=800&q=80"
+               alt="Inspiring sunrise view over school academic quad and campus architecture"
+               loading="lazy"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
+          <div class="absolute bottom-3 left-3 w-11 h-11 bg-navy-800 rounded-xl flex items-center justify-center shadow-lg">
+            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+          </div>
         </div>
         <div class="text-[10px] font-bold uppercase tracking-widest text-navy-500 mb-2">Motto & Vision</div>
-        <h3 class="font-headline text-xl font-bold text-navy-900 mb-3">Everyday Towards Progress</h3>
+        <h3 class="font-headline text-xl font-bold text-navy-900 mb-3 group-hover:text-crimson-600 transition-colors">Everyday Towards Progress</h3>
         <p class="text-slate-500 text-sm leading-relaxed mb-5">
           The vision of the school is aptly signified in its motto — "Everyday Towards Progress" — inspiring continuous intellectual and moral growth.
         </p>
-        <a href="#about" class="inline-flex items-center gap-1.5 text-navy-700 text-sm font-semibold group hover:text-crimson-600">
+        <a href="#about" class="inline-flex items-center gap-1.5 text-navy-700 text-sm font-semibold group/link hover:text-crimson-600">
           Read More
-          <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          <svg class="w-4 h-4 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
         </a>
       </div>
 
       <!-- Card 3: Academic Program -->
-      <div class="highlight-card bg-white rounded-2xl p-8 border border-navy-200 shadow-card cursor-pointer">
-        <div class="w-14 h-14 bg-emerald-600 rounded-2xl flex items-center justify-center mb-5 shadow-lg">
-          <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM9 4h2v5l-1-.75L9 9V4zm9 16H6V4h1v9l3-2.25L13 13V4h5v16z"/></svg>
+      <div class="highlight-card bg-white rounded-2xl p-6 sm:p-7 border border-navy-200 shadow-card cursor-pointer group">
+        <div class="relative aspect-video rounded-xl overflow-hidden mb-5 bg-slate-100">
+          <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=800&q=80"
+               alt="CBSE curriculum textbooks, study materials, and academic literature"
+               loading="lazy"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
+          <div class="absolute bottom-3 left-3 w-11 h-11 bg-emerald-600 rounded-xl flex items-center justify-center shadow-lg">
+            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM9 4h2v5l-1-.75L9 9V4zm9 16H6V4h1v9l3-2.25L13 13V4h5v16z"/></svg>
+          </div>
         </div>
         <div class="text-[10px] font-bold uppercase tracking-widest text-emerald-600 mb-2">Academic Program</div>
-        <h3 class="font-headline text-xl font-bold text-navy-900 mb-3">CBSE English Medium +2</h3>
+        <h3 class="font-headline text-xl font-bold text-navy-900 mb-3 group-hover:text-crimson-600 transition-colors">CBSE English Medium +2</h3>
         <p class="text-slate-500 text-sm leading-relaxed mb-5">
           The academic session runs from April to March. Ours is an English medium institution affiliated with CBSE up to +2 level.
         </p>
-        <a href="#admission" class="inline-flex items-center gap-1.5 text-emerald-600 text-sm font-semibold group">
+        <a href="#admission" class="inline-flex items-center gap-1.5 text-emerald-600 text-sm font-semibold group/link">
           Read More
-          <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          <svg class="w-4 h-4 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
         </a>
       </div>
 
       <!-- Card 4: School Activities -->
-      <div class="highlight-card bg-white rounded-2xl p-8 border border-navy-200 shadow-card cursor-pointer">
-        <div class="w-14 h-14 bg-violet-600 rounded-2xl flex items-center justify-center mb-5 shadow-lg">
-          <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm0 16c-3.86 0-7-3.14-7-7s3.14-7 7-7 7 3.14 7 7-3.14 7-7 7zm1-11h-2v3H8v2h3v3h2v-3h3v-2h-3V8z"/></svg>
+      <div class="highlight-card bg-white rounded-2xl p-6 sm:p-7 border border-navy-200 shadow-card cursor-pointer group">
+        <div class="relative aspect-video rounded-xl overflow-hidden mb-5 bg-slate-100">
+          <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80"
+               alt="Music, cultural instruments, and fine arts activities at St. Joseph Public School"
+               loading="lazy"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
+          <div class="absolute bottom-3 left-3 w-11 h-11 bg-violet-600 rounded-xl flex items-center justify-center shadow-lg">
+            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm0 16c-3.86 0-7-3.14-7-7s3.14-7 7-7 7 3.14 7 7-3.14 7-7 7zm1-11h-2v3H8v2h3v3h2v-3h3v-2h-3V8z"/></svg>
+          </div>
         </div>
         <div class="text-[10px] font-bold uppercase tracking-widest text-violet-500 mb-2">School Activities</div>
-        <h3 class="font-headline text-xl font-bold text-navy-900 mb-3">Holistic Growth Programs</h3>
+        <h3 class="font-headline text-xl font-bold text-navy-900 mb-3 group-hover:text-crimson-600 transition-colors">Holistic Growth Programs</h3>
         <p class="text-slate-500 text-sm leading-relaxed mb-5">
           Holistic growth through co-curricular activities, debates, sports championships, and cultural arts programs.
         </p>
-        <a href="#gallery" class="inline-flex items-center gap-1.5 text-violet-600 text-sm font-semibold group">
+        <a href="#gallery" class="inline-flex items-center gap-1.5 text-violet-600 text-sm font-semibold group/link">
           Read More
-          <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          <svg class="w-4 h-4 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
         </a>
       </div>
 
       <!-- Card 5: Career / Requirement (Now Hiring) — spans 2 cols on md -->
-      <div class="highlight-card bg-gradient-to-br from-navy-900 to-navy-800 rounded-2xl p-8 border border-navy-700 shadow-card cursor-pointer md:col-span-2 lg:col-span-1">
-        <div class="flex items-start justify-between mb-5">
-          <div class="w-14 h-14 bg-amber-500 rounded-2xl flex items-center justify-center shadow-lg">
-            <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M20 6h-2.18c.07-.44.18-.88.18-1.36C18 2.53 15.47 0 12.36 0 10.5 0 8.9.92 7.86 2.22L7 3.08 6.14 2.22C5.09.92 3.5 0 1.64 0-1.47 0-4 2.53-4 5.64c0 .48.11.92.18 1.36H-6v14h28V6h-2zM13.5 4h1c.83 0 1.5.67 1.5 1.5S15.33 7 14.5 7h-1V4zm-3 0h1v3h-1V4zM11 4c-.83 0-1.5-.67-1.5-1.5S10.17 1 11 1s1.5.67 1.5 1.5S11.83 4 11 4z"/></svg>
+      <div class="highlight-card bg-gradient-to-br from-navy-900 to-navy-800 rounded-2xl p-6 sm:p-7 border border-navy-700 shadow-card cursor-pointer md:col-span-2 lg:col-span-1 group">
+        <div class="relative aspect-video rounded-xl overflow-hidden mb-5 bg-navy-950">
+          <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=800&q=80"
+               alt="Faculty and educator planning session at St. Joseph Public School"
+               loading="lazy"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80" />
+          <div class="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-900/40 to-transparent"></div>
+          <div class="absolute bottom-3 left-3 w-11 h-11 bg-amber-500 rounded-xl flex items-center justify-center shadow-lg">
+            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M20 6h-2.18c.07-.44.18-.88.18-1.36C18 2.53 15.47 0 12.36 0 10.5 0 8.9.92 7.86 2.22L7 3.08 6.14 2.22C5.09.92 3.5 0 1.64 0-1.47 0-4 2.53-4 5.64c0 .48.11.92.18 1.36H-6v14h28V6h-2zM13.5 4h1c.83 0 1.5.67 1.5 1.5S15.33 7 14.5 7h-1V4zm-3 0h1v3h-1V4zM11 4c-.83 0-1.5-.67-1.5-1.5S10.17 1 11 1s1.5.67 1.5 1.5S11.83 4 11 4z"/></svg>
           </div>
-          <div class="hiring-badge bg-crimson-600 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">
+          <div class="absolute top-3 right-3 hiring-badge bg-crimson-600 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest shadow-md">
             Now Hiring
           </div>
         </div>
@@ -943,13 +991,17 @@
         <div class="flex flex-col md:flex-row gap-10 items-start">
 
           <!-- Avatar -->
-          <div class="flex-shrink-0">
-            <div class="w-24 h-24 rounded-full bg-gradient-to-br from-crimson-500 to-crimson-700 flex items-center justify-center ring-4 ring-crimson-200 shadow-xl">
-              <svg class="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.7 0 5-2.3 5-5s-2.3-5-5-5-5 2.3-5 5 2.3 5 5 5zm0 2c-3.3 0-10 1.7-10 5v2h20v-2c0-3.3-6.7-5-10-5z"/></svg>
+          <div class="flex-shrink-0 text-center mx-auto md:mx-0">
+            <div class="w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden ring-4 ring-crimson-500/30 shadow-xl bg-slate-200 mx-auto">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80"
+                   alt="Chairman, Kali Charan Singh Memorial Educational Trust"
+                   loading="lazy"
+                   class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500" />
             </div>
             <div class="mt-4 text-center">
-              <div class="font-headline font-bold text-navy-900 text-sm">Chairman</div>
-              <div class="text-slate-500 text-xs mt-0.5">St. Joseph Public School</div>
+              <div class="font-headline font-bold text-navy-900 text-sm">Shri Anil Sharma</div>
+              <div class="text-slate-500 text-xs mt-0.5 font-medium">Chairman &amp; Founder</div>
+              <div class="text-crimson-600 text-[10px] font-bold uppercase tracking-wider mt-0.5">K.C.S. Memorial Trust</div>
             </div>
           </div>
 
@@ -993,73 +1045,89 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
 
       <!-- Video Card 1 -->
-      <div class="video-card bg-white rounded-2xl overflow-hidden border border-navy-200 shadow-card cursor-pointer" onclick="openVideoModal('Ganesh Vandana — Annual Day Inauguration')">
-        <div class="relative aspect-video bg-gradient-to-br from-amber-800 to-amber-900 overflow-hidden">
+      <div class="video-card bg-white rounded-2xl overflow-hidden border border-navy-200 shadow-card cursor-pointer group" onclick="openVideoModal('Ganesh Vandana — Annual Day Inauguration')">
+        <div class="relative aspect-video bg-slate-900 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=800&q=80"
+               alt="Ganesh Vandana classical dance opening performance at St. Joseph Public School"
+               loading="lazy"
+               class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-900/30 to-transparent"></div>
           <div class="absolute inset-0 flex items-center justify-center">
-            <div class="w-14 h-14 bg-white/20 rounded-full flex items-center justify-center play-btn">
+            <div class="w-14 h-14 bg-white/25 backdrop-blur-md rounded-full flex items-center justify-center play-btn shadow-lg group-hover:scale-110 transition-transform">
               <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
             </div>
           </div>
-          <div class="absolute inset-0 opacity-30" style="background: radial-gradient(circle at 30% 40%, rgba(245,158,11,.6), transparent 70%)"></div>
-          <div class="absolute top-3 right-3 bg-black/60 text-white text-xs px-2 py-1 rounded-md font-mono">3:42</div>
+          <div class="absolute top-3 right-3 bg-black/70 backdrop-blur-xs text-white text-xs px-2.5 py-1 rounded-md font-mono font-medium">3:42</div>
         </div>
         <div class="p-4">
           <div class="text-[10px] font-bold uppercase tracking-widest text-amber-600 mb-1">Annual Day</div>
-          <h4 class="font-headline font-bold text-navy-900 text-sm">Ganesh Vandana</h4>
+          <h4 class="font-headline font-bold text-navy-900 text-sm group-hover:text-crimson-600 transition-colors">Ganesh Vandana</h4>
           <p class="text-slate-500 text-xs mt-1">Annual Day Inauguration Ceremony</p>
         </div>
       </div>
 
       <!-- Video Card 2 -->
-      <div class="video-card bg-white rounded-2xl overflow-hidden border border-navy-200 shadow-card cursor-pointer" onclick="openVideoModal('Lamp Lighting — Auspicious Ceremony')">
-        <div class="relative aspect-video bg-gradient-to-br from-orange-800 to-red-900 overflow-hidden">
+      <div class="video-card bg-white rounded-2xl overflow-hidden border border-navy-200 shadow-card cursor-pointer group" onclick="openVideoModal('Lamp Lighting — Auspicious Ceremony')">
+        <div class="relative aspect-video bg-slate-900 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1605647540924-852290f6b0d5?auto=format&fit=crop&w=800&q=80"
+               alt="Deep Prajwalan traditional brass lamp lighting ceremony"
+               loading="lazy"
+               class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-900/30 to-transparent"></div>
           <div class="absolute inset-0 flex items-center justify-center">
-            <div class="w-14 h-14 bg-white/20 rounded-full flex items-center justify-center play-btn">
+            <div class="w-14 h-14 bg-white/25 backdrop-blur-md rounded-full flex items-center justify-center play-btn shadow-lg group-hover:scale-110 transition-transform">
               <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
             </div>
           </div>
-          <div class="absolute inset-0 opacity-30" style="background: radial-gradient(circle at 70% 30%, rgba(251,146,60,.7), transparent 70%)"></div>
-          <div class="absolute top-3 right-3 bg-black/60 text-white text-xs px-2 py-1 rounded-md font-mono">2:15</div>
+          <div class="absolute top-3 right-3 bg-black/70 backdrop-blur-xs text-white text-xs px-2.5 py-1 rounded-md font-mono font-medium">2:15</div>
         </div>
         <div class="p-4">
           <div class="text-[10px] font-bold uppercase tracking-widest text-orange-600 mb-1">Ceremony</div>
-          <h4 class="font-headline font-bold text-navy-900 text-sm">Lamp Lighting</h4>
+          <h4 class="font-headline font-bold text-navy-900 text-sm group-hover:text-crimson-600 transition-colors">Lamp Lighting</h4>
           <p class="text-slate-500 text-xs mt-1">Auspicious Inaugural Ceremony</p>
         </div>
       </div>
 
       <!-- Video Card 3 -->
-      <div class="video-card bg-white rounded-2xl overflow-hidden border border-navy-200 shadow-card cursor-pointer" onclick="openVideoModal('Welcome Song & Dance — Cultural Program')">
-        <div class="relative aspect-video bg-gradient-to-br from-violet-800 to-navy-900 overflow-hidden">
+      <div class="video-card bg-white rounded-2xl overflow-hidden border border-navy-200 shadow-card cursor-pointer group" onclick="openVideoModal('Welcome Song & Dance — Cultural Program')">
+        <div class="relative aspect-video bg-slate-900 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80"
+               alt="School choir and students welcome song and dance cultural performance"
+               loading="lazy"
+               class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-900/30 to-transparent"></div>
           <div class="absolute inset-0 flex items-center justify-center">
-            <div class="w-14 h-14 bg-white/20 rounded-full flex items-center justify-center play-btn">
+            <div class="w-14 h-14 bg-white/25 backdrop-blur-md rounded-full flex items-center justify-center play-btn shadow-lg group-hover:scale-110 transition-transform">
               <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
             </div>
           </div>
-          <div class="absolute inset-0 opacity-30" style="background: radial-gradient(circle at 50% 60%, rgba(139,92,246,.7), transparent 70%)"></div>
-          <div class="absolute top-3 right-3 bg-black/60 text-white text-xs px-2 py-1 rounded-md font-mono">5:08</div>
+          <div class="absolute top-3 right-3 bg-black/70 backdrop-blur-xs text-white text-xs px-2.5 py-1 rounded-md font-mono font-medium">5:08</div>
         </div>
         <div class="p-4">
           <div class="text-[10px] font-bold uppercase tracking-widest text-violet-600 mb-1">Cultural Program</div>
-          <h4 class="font-headline font-bold text-navy-900 text-sm">Welcome Song & Dance</h4>
+          <h4 class="font-headline font-bold text-navy-900 text-sm group-hover:text-crimson-600 transition-colors">Welcome Song & Dance</h4>
           <p class="text-slate-500 text-xs mt-1">Student Cultural Performance</p>
         </div>
       </div>
 
       <!-- Video Card 4 -->
-      <div class="video-card bg-white rounded-2xl overflow-hidden border border-navy-200 shadow-card cursor-pointer" onclick="openVideoModal('Chairman\'s Speech — Vision & Address')">
-        <div class="relative aspect-video bg-gradient-to-br from-navy-800 to-crimson-900 overflow-hidden">
+      <div class="video-card bg-white rounded-2xl overflow-hidden border border-navy-200 shadow-card cursor-pointer group" onclick="openVideoModal('Chairman\'s Speech — Vision & Address')">
+        <div class="relative aspect-video bg-slate-900 overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=800&q=80"
+               alt="Chairman address to students, faculty, and parents at St. Joseph Public School"
+               loading="lazy"
+               class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-900/30 to-transparent"></div>
           <div class="absolute inset-0 flex items-center justify-center">
-            <div class="w-14 h-14 bg-white/20 rounded-full flex items-center justify-center play-btn">
+            <div class="w-14 h-14 bg-white/25 backdrop-blur-md rounded-full flex items-center justify-center play-btn shadow-lg group-hover:scale-110 transition-transform">
               <svg class="w-6 h-6 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
             </div>
           </div>
-          <div class="absolute inset-0 opacity-30" style="background: radial-gradient(circle at 40% 40%, rgba(220,38,38,.5), transparent 70%)"></div>
-          <div class="absolute top-3 right-3 bg-black/60 text-white text-xs px-2 py-1 rounded-md font-mono">8:30</div>
+          <div class="absolute top-3 right-3 bg-black/70 backdrop-blur-xs text-white text-xs px-2.5 py-1 rounded-md font-mono font-medium">8:30</div>
         </div>
         <div class="p-4">
           <div class="text-[10px] font-bold uppercase tracking-widest text-crimson-600 mb-1">Leadership</div>
-          <h4 class="font-headline font-bold text-navy-900 text-sm">Chairman's Speech</h4>
+          <h4 class="font-headline font-bold text-navy-900 text-sm group-hover:text-crimson-600 transition-colors">Chairman's Speech</h4>
           <p class="text-slate-500 text-xs mt-1">Vision, Values & Address</p>
         </div>
       </div>
